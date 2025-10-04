@@ -1,7 +1,4 @@
-// validate.js
-const Joi = require("joi");
-
-// Definimos esquema de validación para el contrato
+import Joi from "joi";
 const contratoSchema = Joi.object({
   numero: Joi.number().required(),
   tipo: Joi.string().required(),
@@ -37,11 +34,15 @@ const contratoSchema = Joi.object({
     cedula: Joi.string().required()
   }).required(),
   firmas: Joi.object({
-    vendedor: Joi.boolean(),
-    comprador: Joi.boolean()
-  }),
-  observaciones: Joi.string().allow(""),
-  clausulas: Joi.object().pattern(Joi.string(), Joi.string())
-}).required();
+    vendedor: Joi.boolean().required(),
+    comprador: Joi.boolean().required()
+  }).required(),
+  observaciones: Joi.string().required(),
+  clausulas: Joi.object({
+    primera: Joi.string().required(),
+    segunda: Joi.string().required(),
+    tercera: Joi.string().required()
+  }).required()
+});
 
-module.exports = contratoSchema;
+export default contratoSchema;
