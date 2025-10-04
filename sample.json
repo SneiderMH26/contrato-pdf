@@ -41,7 +41,7 @@
     "clausulas": {
       "primera": "El vendedor transfiere al comprador la suma de dinero recibida en calidad de préstamo y entrega el bien descrito como garantía.",
       "segunda": "El comprador transfiere al vendedor la suma de dinero acordada, quedando con derecho a reclamar la devolución del bien únicamente dentro del término de retroventa.",
-      "tercera": "El incumplimiento por parte del vendedor en el plazo pactado transfiere definitivamente la propiedad del bien al comprador, de conformidad con el Código Civil Colombiano."
+      "tercera": "<strong>El incumplimiento por parte del vendedor en el plazo pactado transfiere definitivamente la propiedad del bien al comprador, de conformidad con el Código Civil Colombiano.</strong>"
     }
   }
 }
