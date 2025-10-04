@@ -43,6 +43,16 @@ app.post("/generar-pdf", (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+
+app.get("/", (req, res) => {
+  res.send("API de generación de PDF en funcionamiento");
+});
+
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`✅ Servidor corriendo en el puerto ${PORT}`);
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
+
+process.on("SIGTERM", () => {
+  console.log("Señal SIGTERM recibida, apagando servidor...");
+  process.exit(0);
 });
