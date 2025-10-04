@@ -1,0 +1,47 @@
+{
+  "contrato": {
+    "numero": 6089,
+    "tipo": "Contrato de Compraventa con Pacto de Retroventa",
+    "empresa": {
+      "nombre": "COMPRAVENTA LOS PIJAOS",
+      "nit": "17.642.540-2",
+      "direccion": "Calle 16 No. 3-102",
+      "telefono": "2611671",
+      "ciudad": "IBAGUE"
+    },
+    "plazo": {
+      "meses": 4,
+      "fecha_inicio": "02-DIC-2024",
+      "fecha_vencimiento": null
+    },
+    "prestamo": {
+      "valor": 1350000,
+      "valor_letras": "Un millon trescientos cincuenta mil pesos m/cte"
+    },
+    "articulo": {
+      "descripcion": "1 Anillo jaguar con piedras",
+      "peso": "6.9 gramos"
+    },
+    "vendedor": {
+      "nombre": "Urley Vargas Claros",
+      "cedula": "93.410.050",
+      "ciudad": "Ibague",
+      "direccion": "Torre 6, Casa 30, Urb Martini",
+      "celular": "3209101332"
+    },
+    "comprador": {
+      "nombre": "COMPRAVENTA LOS PIJAOS FABIO MUÑOZ SILVA",
+      "cedula": "17.642.540"
+    },
+    "firmas": {
+      "vendedor": true,
+      "comprador": true
+    },
+    "observaciones": "NO SE ADMITEN RECLAMOS – NO SE ENTREGAN COPIAS A TERCEROS",
+    "clausulas": {
+      "primera": "El vendedor transfiere al comprador la suma de dinero recibida en calidad de préstamo y entrega el bien descrito como garantía.",
+      "segunda": "El comprador transfiere al vendedor la suma de dinero acordada, quedando con derecho a reclamar la devolución del bien únicamente dentro del término de retroventa.",
+      "tercera": "El incumplimiento por parte del vendedor en el plazo pactado transfiere definitivamente la propiedad del bien al comprador, de conformidad con el Código Civil Colombiano."
+    }
+  }
+}
