@@ -2,7 +2,7 @@ import fs from "fs";
 import fetch from "node-fetch";
 
 // 1️⃣ URL del servicio (ajusta con tu URL pública real de Railway)
-const URL = "contrato-pdf-production.up.railway.app/generar-pdf"; // <-- reemplázala si tu URL es distinta
+const URL = "https://contrato-pdf-production.up.railway.app/generar-pdf"; // <-- reemplázala si tu URL es distinta
 
 // 2️⃣ Cargar tu JSON de ejemplo desde el archivo local
 const rawData = fs.readFileSync("./sample.json", "utf-8");

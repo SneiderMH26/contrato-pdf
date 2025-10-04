@@ -1,25 +1,23 @@
-// server.js
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
 
-const contratoSchema = require("./validate");
-const generarPDF = require("./generarPDF");
+import contratoSchema from "./validate.js";
+import generarPDF from "./generarPDF.js";
+
+dotenv.config();
 
 const app = express();
 
-// Middleware
-app.use(cors()); // permite llamadas desde frontends externos
-app.use(express.json({ limit: "2mb" })); // permite recibir JSON en el body
+app.use(cors());
+app.use(express.json({ limit: "2mb" }));
 
-// Endpoint POST /generar-pdf
 app.post("/generar-pdf", (req, res) => {
   const apiKey = req.header("x-api-key");
   if (process.env.API_KEY && apiKey !== process.env.API_KEY) {
     return res.status(401).json({ error: "Unauthorized: API Key inválida" });
   }
 
-  // Validar contrato con Joi
   const { error, value } = contratoSchema.validate(req.body.contrato, { abortEarly: false });
 
   if (error) {
@@ -28,16 +26,11 @@ app.post("/generar-pdf", (req, res) => {
 
   try {
     const contrato = value;
-
-    // Configuración de headers
     const filename = `Contrato_${contrato.numero}.pdf`;
     res.setHeader("Content-Type", "application/pdf");
     res.setHeader("Content-Disposition", `attachment; filename="${filename}"`);
-
-    // Generar el PDF
     generarPDF(contrato, res);
-
-    } catch (err) {
+  } catch (err) {
     console.error("🛑 ERROR AL GENERAR PDF 🛑");
     console.error(err.message);
     console.error(err.stack);
@@ -49,10 +42,7 @@ app.post("/generar-pdf", (req, res) => {
   }
 });
 
-// Iniciar servidor
 const PORT = process.env.PORT || 3000;
-const HOST = "0.0.0.0"; 
-
-app.listen(PORT, HOST, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Servidor corriendo en el puerto ${PORT}`);
 });
