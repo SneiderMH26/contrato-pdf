@@ -37,10 +37,12 @@ app.post("/generar-pdf", (req, res) => {
     // Generar el PDF
     generarPDF(contrato, res);
 
-  } catch (err) {
-    console.error("Error al generar PDF:", err);
+    } catch (err) {
+    console.error("🛑 ERROR AL GENERAR PDF 🛑");
+    console.error(err.message);
+    console.error(err.stack);
     if (!res.headersSent) {
-      res.status(500).json({ error: "Error interno generando PDF" });
+      res.status(500).json({ error: err.message });
     } else {
       res.end();
     }
