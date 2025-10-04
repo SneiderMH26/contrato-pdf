@@ -49,6 +49,8 @@ app.post("/generar-pdf", (req, res) => {
 
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+const HOST = "0.0.0.0"; 
+
+app.listen(PORT, HOST, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
