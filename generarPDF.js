@@ -6,7 +6,7 @@ export default function generarPDF(contrato, res) {
 
   // ✅ Encabezado con logo y empresa
   doc
-    .image("logo.png", 50, 45, { width: 60 }) // <-- coloca un logo en tu carpeta raíz
+    doc.image("logo.png", 50, 45, { width: 60 }) // <-- coloca un logo en tu carpeta raíz
     .fontSize(20)
     .text("COMPRAVENTA LOS PIJAOS", 120, 57)
     .moveDown();
