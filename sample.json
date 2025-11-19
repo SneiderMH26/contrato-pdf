@@ -1,47 +1,59 @@
 {
-  "contrato": {
-    "numero": 6089,
-    "tipo": "Contrato de Compraventa con Pacto de Retroventa",
-    "empresa": {
-      "nombre": "COMPRAVENTA LOS PIJAOS",
-      "nit": "17.642.540-2",
-      "direccion": "Calle 16 No. 3-102",
-      "telefono": "2611671",
-      "ciudad": "IBAGUE"
-    },
-    "plazo": {
-      "meses": 4,
-      "fecha_inicio": "02-DIC-2024",
-      "fecha_vencimiento": null
-    },
-    "prestamo": {
-      "valor": 1350000,
-      "valor_letras": "Un millon trescientos cincuenta mil pesos m/cte"
-    },
-    "articulo": {
-      "descripcion": "1 Anillo jaguar con piedras",
-      "peso": "6.9 gramos"
-    },
-    "vendedor": {
-      "nombre": "Urley Vargas Claros",
-      "cedula": "93.410.050",
-      "ciudad": "Ibague",
-      "direccion": "Torre 6, Casa 30, Urb Martini",
-      "celular": "3209101332"
-    },
-    "comprador": {
-      "nombre": "COMPRAVENTA LOS PIJAOS FABIO MUÑOZ SILVA",
-      "cedula": "17.642.540"
-    },
-    "firmas": {
-      "vendedor": true,
-      "comprador": true
-    },
-    "observaciones": "NO SE ADMITEN RECLAMOS – NO SE ENTREGAN COPIAS A TERCEROS",
-    "clausulas": {
-      "primera": "El vendedor transfiere al comprador la suma de dinero recibida en calidad de préstamo y entrega el bien descrito como garantía.",
-      "segunda": "El comprador transfiere al vendedor la suma de dinero acordada, quedando con derecho a reclamar la devolución del bien únicamente dentro del término de retroventa.",
-      "tercera": "<strong>El incumplimiento por parte del vendedor en el plazo pactado transfiere definitivamente la propiedad del bien al comprador, de conformidad con el Código Civil Colombiano.</strong>"
-    }
+  "vendedor": {
+    "nombre": "Urley Vargas Claros",
+    "tipo_documento": "CC",
+    "numero_documento": "11123456",
+    "lugar_expedicion": "Ibagué",
+    "direccion": "Torre 6, Casa 30, Urb. Martini de Ibagué",
+    "telefono": "3209101112"
+  },
+
+  "comprador": {
+    "nombre": "Compraventa Los Pijaos - Fabio Muñoz Silva",
+    "tipo_documento": "CC",
+    "numero_documento": "",
+    "mostrar_cc": false
+  },
+
+  "articulo": {
+    "titulo_descripcion": "<strong>DESCRIPCION DETALLADA DEL ARTICULO OBJETO DE ESTA COMPRAVENTA:</strong>",
+    "descripcion_detallada": "",
+    
+    "titulo_precio": "<strong>EL PRECIO DE LA COMPRAVENTA ES LA SUMA DE</strong>",
+    "precio_compraventa": "",
+
+    "precio_retroventa": ""
+  },
+
+  "clausulas": {
+    "titulo_clausulas": "<strong>CLAUSULAS ACCESORIAS QUE RIGEN EL PRESENTE CONTRATO</strong>",
+
+    "primera": "<strong>PRIMERA:</strong> Los contratantes de conformidad con el artículo 1939 del Código Civil Colombiano, EL VENDEDOR se reserva la facultad de recobrar los artículos vendidos por medio de este contrato, pagando al COMPRADOR como precio de retroventa la suma indicada en el documento.",
+    
+    "segunda": "<strong>SEGUNDA:</strong> El derecho que nace del pacto de retroventa del presente contrato, no podrá cederse a ningún título. En caso de pérdida de este contrato el VENDEDOR deberá informar inmediatamente al COMPRADOR y éste solo exhibirá el artículo descrito para la terminación del presente contrato.",
+    
+    "tercera": "<strong>TERCERA:</strong> EL VENDEDOR y EL COMPRADOR pactan que la facultad de retroventa podrá ejercerse dentro del término de cuatro (4) meses contados a partir de la firma del presente documento.",
+    
+    "cuarta": "<strong>CUARTA:</strong> En caso de deterioro o pérdida de los artículos descritos, ocasionados por fuerza mayor o caso fortuito, el COMPRADOR se exonerará de cualquier responsabilidad.",
+    
+    "quinta": "<strong>QUINTA:</strong> Las controversias relativas al presente contrato se resolverán por un tribunal de arbitramento de conformidad con la cámara de comercio de esta ciudad.",
+    
+    "sexta": "<strong>SEXTA:</strong> No realizamos mutuo con intereses.",
+    
+    "septima": "<strong>SEPTIMA:</strong> Las partes podrán pactar que el término del contrato y la posibilidad de ejercer la retroventa se prorrogue por un tiempo determinado sin exceder cuatro (4) años. En este caso se registrará en el reverso del contrato la nueva fecha de vencimiento y el nuevo valor de retroventa si aplica.",
+    
+    "octava": "<strong>OCTAVA:</strong> El comprador no responderá por la protección ni recuperación de información contenida en equipos electrónicos. Las partes autorizan al comprador para su libre utilización durante y después del contrato."
+  },
+
+  "firma": {
+    "titulo_firmas": "<strong>TANTO VENDEDOR COMO COMPRADOR HEMOS LEÍDO, COMPRENDIDO Y ACEPTADO EL TEXTO DE ESTE CONTRATO.</strong>",
+
+    "vendedor_nombre": "Urley Vargas Claros",
+    "vendedor_documento": "CC 11123456",
+
+    "comprador_nombre": "Compraventa Los Pijaos - Fabio Muñoz Silva",
+    "comprador_documento": "",
+
+    "bolsa_seguridad_no": ""
   }
 }
