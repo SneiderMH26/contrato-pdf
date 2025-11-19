@@ -2,171 +2,134 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Contrato de Compraventa</title>
+  <title>Contrato de Compraventa con Retroventa</title>
+
   <style>
     body {
       font-family: "Times New Roman", serif;
       font-size: 12px;
       color: #000;
       margin: 0;
+      padding: 20px;
       background: #fff;
+      line-height: 1.4;
     }
 
-    .hoja {
-      border: 1px solid #000;
-      padding: 10px 20px;
-      margin: 10px;
-    }
-
-    .encabezado {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #000;
-      padding-bottom: 5px;
-      margin-bottom: 5px;
-    }
-
-    .logo {
-      width: 75px;
-      height: auto;
-    }
-
-    .titulo {
+    h2 {
       text-align: center;
-      font-size: 14px;
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
       font-weight: bold;
-      line-height: 1.2;
-    }
-
-    .titulo small {
-      font-weight: normal;
-      font-size: 11px;
-    }
-
-    .datos {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #000;
-      padding: 4px 0;
-      font-size: 11px;
     }
 
     .bloque {
-      font-size: 11.5px;
-      margin-top: 5px;
-    }
-
-    .bloque p {
-      margin: 3px 0;
+      margin-top: 12px;
       text-align: justify;
     }
 
-    .clausulas p {
-      margin: 3px 0;
-      text-align: justify;
+    .titulo-seccion {
+      font-weight: bold;
+      margin-top: 18px;
+      margin-bottom: 5px;
     }
 
     .firmas {
+      width: 100%;
+      margin-top: 50px;
       display: flex;
       justify-content: space-between;
-      margin-top: 40px;
       text-align: center;
-      font-size: 12px;
     }
 
     .firma {
       width: 45%;
     }
 
-    .pie {
-      text-align: center;
-      font-size: 10px;
-      margin-top: 20px;
-      color: #222;
+    .linea {
       border-top: 1px solid #000;
-      padding-top: 3px;
+      margin-bottom: 3px;
     }
 
-    .campo {
-      border-bottom: 1px solid #000;
-      display: inline-block;
-      min-width: 80px;
-      text-align: center;
-    }
-
-    b {
+    strong {
       font-weight: bold;
-    }
-
-    i {
-      color: #444;
     }
   </style>
 </head>
+
 <body>
-  <div class="hoja">
 
-    <div class="encabezado">
-      <img 
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAC7m5rvAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlMAAHaTzTgAAAArSURBVHja7cEBAQAAAIIg/69uNDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwNwCcgAAB7I5VHgAAAABJRU5ErkJggg==" 
-        class="logo" 
-        alt="Logo Los Pijaos"
-      >
-      <div class="titulo">
-        <div>{{empresa.nombre}}</div>
-        <small>{{empresa.direccion}} · Tel. {{empresa.telefono}} · {{empresa.ciudad}}</small><br>
-        <div>CONTRATO DE COMPRAVENTA CON PACTO DE RETROVENTA</div>
-      </div>
-    </div>
+  <h2>CONTRATO DE COMPRAVENTA CON PACTO DE RETROVENTA</h2>
 
-    <div class="datos">
-      <div><b>TERMINO:</b> {{plazo.meses}} MESES</div>
-      <div><b>N°:</b> {{numero}}</div>
-      <div><b>POR:</b> ${{prestamo.valor}}</div>
-    </div>
-
-    <div class="bloque">
-      <p>En <b>{{empresa.ciudad}}</b>, a los <b>{{plazo.fecha_inicio}}</b>, comparecen a la firma del presente contrato de compraventa con pacto de retroventa:</p>
-      <p><b>{{vendedor.nombre}}</b>, identificado(a) con la C.C. <b>{{vendedor.cedula}}</b>, residente en <b>{{vendedor.direccion}}</b> de <b>{{vendedor.ciudad}}</b>, celular <b>{{vendedor.celular}}</b>, quien en adelante se denominará <b>EL VENDEDOR</b>.</p>
-      <p>Y <b>{{comprador.nombre}}</b>, identificado con la C.C. <b>{{comprador.cedula}}</b>, quien se denominará <b>EL COMPRADOR</b>.</p>
-    </div>
-
-    <div class="bloque">
-      <p><b>Objeto:</b> El vendedor entrega como garantía el artículo descrito: <b>{{articulo.descripcion}}</b> con un peso de <b>{{articulo.peso}}</b>.</p>
-      <p><b>Valor del préstamo:</b> ${{prestamo.valor}} (<i>{{prestamo.valor_letras}}</i>).</p>
-    </div>
-
-    <div class="clausulas">
-      <p><b>PRIMERA:</b> {{clausulas.primera}}</p>
-      <p><b>SEGUNDA:</b> {{clausulas.segunda}}</p>
-      <p><b>TERCERA:</b> {{clausulas.tercera}}</p>
-    </div>
-
-    <div class="bloque">
-      <p><b>OBSERVACIONES:</b> {{observaciones}}</p>
-    </div>
-
-    <div class="firmas">
-      <div class="firma">
-        ___________________________<br>
-        <b>EL VENDEDOR</b><br>
-        {{vendedor.nombre}}<br>
-        C.C. {{vendedor.cedula}}
-      </div>
-      <div class="firma">
-        ___________________________<br>
-        <b>EL COMPRADOR</b><br>
-        {{comprador.nombre}}<br>
-        C.C. {{comprador.cedula}}
-      </div>
-    </div>
-
-    <div class="pie">
-      NO SE ADMITEN RECLAMOS — NO SE ENTREGAN COPIAS A TERCEROS<br>
-      Documento generado automáticamente por {{empresa.nombre}}
-    </div>
-
+  <div class="bloque">
+    <p>
+      Entre <strong>{{vendedor.nombre}}</strong>, identificado(a) con 
+      <strong>{{vendedor.tipo_documento}} {{vendedor.numero_documento}}</strong>, 
+      expedido en <strong>{{vendedor.lugar_expedicion}}</strong>, 
+      residente en <strong>{{vendedor.direccion}}</strong>, teléfono 
+      <strong>{{vendedor.telefono}}</strong>,
+      quien para efectos de este contrato se denominará 
+      <strong>EL VENDEDOR</strong>, y 
+      <strong>{{comprador.nombre}}</strong>, quien actúa como 
+      <strong>EL COMPRADOR</strong>, se celebra el presente contrato de compraventa
+      con pacto de retroventa identificado con el número 
+      <strong>{{numero}}</strong>.
+    </p>
   </div>
+
+  <!-- DESCRIPCIÓN DEL ARTÍCULO -->
+  <div class="titulo-seccion">{{articulo.titulo_descripcion}}</div>
+  <div class="bloque">
+    <p>{{articulo.descripcion_detallada}}</p>
+  </div>
+
+  <!-- PRECIO -->
+  <div class="titulo-seccion">{{articulo.titulo_precio}}</div>
+  <div class="bloque">
+    <p>
+      <strong>${{articulo.precio_compraventa}}</strong>.
+    </p>
+
+    <p>
+      El precio de retroventa pactado para efectos legales y contractuales será:
+      <strong>${{articulo.precio_retroventa}}</strong>.
+    </p>
+  </div>
+
+  <!-- CLÁUSULAS -->
+  <div class="titulo-seccion">{{clausulas.titulo_clausulas}}</div>
+
+  <div class="bloque">
+    <p>{{clausulas.primera}}</p>
+    <p>{{clausulas.segunda}}</p>
+    <p>{{clausulas.tercera}}</p>
+    <p>{{clausulas.cuarta}}</p>
+    <p>{{clausulas.quinta}}</p>
+    <p>{{clausulas.sexta}}</p>
+    <p>{{clausulas.septima}}</p>
+    <p>{{clausulas.octava}}</p>
+  </div>
+
+  <!-- FIRMAS -->
+  <div class="titulo-seccion">{{firma.titulo_firmas}}</div>
+
+  <div class="firmas">
+    <div class="firma">
+      <div class="linea"></div>
+      <strong>{{firma.vendedor_nombre}}</strong><br>
+      {{firma.vendedor_documento}}
+    </div>
+
+    <div class="firma">
+      <div class="linea"></div>
+      <strong>{{firma.comprador_nombre}}</strong><br>
+      {{firma.comprador_documento}}
+    </div>
+  </div>
+
+  <br><br>
+
+  <p><strong>Número de Bolsa de Seguridad:</strong> {{firma.bolsa_seguridad_no}}</p>
+
 </body>
 </html>
