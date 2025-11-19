@@ -1,135 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Contrato de Compraventa con Retroventa</title>
-
+  <meta charset="utf-8" />
+  <title>Contrato de Compraventa con Pacto de Retroventa</title>
   <style>
-    body {
-      font-family: "Times New Roman", serif;
-      font-size: 12px;
-      color: #000;
-      margin: 0;
-      padding: 20px;
-      background: #fff;
-      line-height: 1.4;
-    }
-
-    h2 {
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .bloque {
-      margin-top: 12px;
-      text-align: justify;
-    }
-
-    .titulo-seccion {
-      font-weight: bold;
-      margin-top: 18px;
-      margin-bottom: 5px;
-    }
-
-    .firmas {
-      width: 100%;
-      margin-top: 50px;
-      display: flex;
-      justify-content: space-between;
-      text-align: center;
-    }
-
-    .firma {
-      width: 45%;
-    }
-
-    .linea {
-      border-top: 1px solid #000;
-      margin-bottom: 3px;
-    }
-
-    strong {
-      font-weight: bold;
-    }
+    body { font-family: "Times New Roman", Times, serif; font-size: 12px; color: #000; margin: 30px; line-height: 1.25; }
+    .container { width: 100%; }
+    .center { text-align: center; }
+    .bold { font-weight: bold; }
+    .small { font-size: 11px; }
+    p { margin: 6px 0; text-align: justify; }
+    .clausulas p { margin: 8px 0; text-align: justify; }
+    .firmas { margin-top: 40px; display:flex; justify-content: space-between; }
+    .firma { width: 45%; text-align: center; }
+    .line { margin-top: 40px; border-top: 1px solid #000; }
+    u { text-decoration: underline; text-decoration-thickness: 1.4px; }
+    .titulo { font-size: 14px; font-weight: bold; text-align: center; margin-bottom: 6px; }
+    .subtitulo { font-weight: bold; margin-top: 12px; }
+    .small-note { font-size: 11px; color: #333; }
+    .left { text-align: left; }
+    .inline { display: inline; }
   </style>
 </head>
-
 <body>
+  <div class="container">
 
-  <h2>CONTRATO DE COMPRAVENTA CON PACTO DE RETROVENTA</h2>
+    <div class="center titulo">CONTRATO DE COMPRAVENTA CON PACTO DE RETROVENTA</div>
 
-  <div class="bloque">
     <p>
-      Entre <strong>{{vendedor.nombre}}</strong>, identificado(a) con 
-      <strong>{{vendedor.tipo_documento}} {{vendedor.numero_documento}}</strong>, 
-      expedido en <strong>{{vendedor.lugar_expedicion}}</strong>, 
-      residente en <strong>{{vendedor.direccion}}</strong>, teléfono 
-      <strong>{{vendedor.telefono}}</strong>,
-      quien para efectos de este contrato se denominará 
-      <strong>EL VENDEDOR</strong>, y 
-      <strong>{{comprador.nombre}}</strong>, quien actúa como 
-      <strong>EL COMPRADOR</strong>, se celebra el presente contrato de compraventa
-      con pacto de retroventa identificado con el número 
-      <strong>{{numero}}</strong>.
+      Yo, <u><strong>{{vendedor.nombre}}</strong></u>, mayor, identificado con la <strong>C.C.</strong> <u><strong>{{vendedor.numero_documento}}</strong></u> expedida en <u><strong>{{vendedor.lugar_expedicion}}</strong></u>, residente en <u><strong>{{vendedor.direccion}}</strong></u>, Teléfono: <u><strong>{{vendedor.telefono}}</strong></u>, expresamente manifiesto que he vendido, con pacto de retroventa, a la <u><strong>{{comprador.nombre}}</strong></u> el (los) siguiente(s) bien(es), declaro bajo la gravedad de juramento que es (son) de mi propiedad, de lícita procedencia y sobre el (los) cual (es) no pesa ningún gravamen ni limitación al derecho de dominio.
     </p>
-  </div>
 
-  <!-- DESCRIPCIÓN DEL ARTÍCULO -->
-  <div class="titulo-seccion">{{articulo.titulo_descripcion}}</div>
-  <div class="bloque">
-    <p>{{articulo.descripcion_detallada}}</p>
-  </div>
+    <p class="subtitulo">DESCRIPCIÓN DETALLADA DEL ARTÍCULO OBJETO DE ESTA COMPRAVENTA:</p>
+    <p style="margin-top:8px;">
+      <u><em>{{articulo.descripcion_detallada}}</em></u>
+    </p>
 
-  <!-- PRECIO -->
-  <div class="titulo-seccion">{{articulo.titulo_precio}}</div>
-  <div class="bloque">
+    <p class="subtitulo">EL PRECIO DE LA COMPRAVENTA ES LA SUMA DE</p>
     <p>
-      <strong>${{articulo.precio_compraventa}}</strong>.
+      <u><strong>${{articulo.precio_compraventa}}</strong></u> MCTE.
     </p>
 
     <p>
-      El precio de retroventa pactado para efectos legales y contractuales será:
-      <strong>${{articulo.precio_retroventa}}</strong>.
+      El VENDEDOR transfiere al COMPRADOR, a título de Compraventa el derecho de dominio y posesión que tiene y ejerce sobre los anteriores artículos y declara que los bienes que transfiere, los adquirió lícitamente, no fue su importador, son de su exclusiva propiedad, los posee de manera regular, pública y pacífica, están libres de gravamen, limitación al dominio, pleitos pendientes y embargos, con la obligación de salir al saneamiento en casos de Ley.
     </p>
-  </div>
 
-  <!-- CLÁUSULAS -->
-  <div class="titulo-seccion">{{clausulas.titulo_clausulas}}</div>
+    <p class="subtitulo"><strong>** CLAUSULAS ACCESORIAS QUE RIGEN EL PRESENTE CONTRATO **</strong></p>
 
-  <div class="bloque">
-    <p>{{clausulas.primera}}</p>
-    <p>{{clausulas.segunda}}</p>
-    <p>{{clausulas.tercera}}</p>
-    <p>{{clausulas.cuarta}}</p>
-    <p>{{clausulas.quinta}}</p>
-    <p>{{clausulas.sexta}}</p>
-    <p>{{clausulas.septima}}</p>
-    <p>{{clausulas.octava}}</p>
-  </div>
+    <div class="clausulas">
+      <p><strong>PRIMERA:</strong> {{clausulas.primera}}</p>
 
-  <!-- FIRMAS -->
-  <div class="titulo-seccion">{{firma.titulo_firmas}}</div>
+      <p><strong>SEGUNDA:</strong> {{clausulas.segunda}}</p>
 
-  <div class="firmas">
-    <div class="firma">
-      <div class="linea"></div>
-      <strong>{{firma.vendedor_nombre}}</strong><br>
-      {{firma.vendedor_documento}}
+      <p><strong>TERCERA:</strong> {{clausulas.tercera}}</p>
+
+      <p><strong>CUARTA:</strong> {{clausulas.cuarta}}</p>
+
+      <p><strong>QUINTA:</strong> {{clausulas.quinta}}</p>
+
+      <p><strong>SEXTA:</strong> {{clausulas.sexta}}</p>
+
+      <p><strong>SEPTIMA:</strong> {{clausulas.septima}}</p>
+
+      <p><strong>OCTAVA:</strong> {{clausulas.octava}}</p>
     </div>
 
-    <div class="firma">
-      <div class="linea"></div>
-      <strong>{{firma.comprador_nombre}}</strong><br>
-      {{firma.comprador_documento}}
+    <p style="margin-top:14px;">
+      TANTO VENDEDOR COMO COMPRADOR HEMOS LEÍDO, COMPRENDIDO Y ACEPTADO EL TEXTO DE ESTE CONTRATO.
+    </p>
+
+    <p style="margin-top:10px;">En constancia de lo anterior firman las partes:</p>
+
+    <div class="firmas">
+      <div class="firma">
+        <div class="line"></div>
+        <div style="margin-top:6px;"><strong>{{firma.vendedor_nombre}}</strong></div>
+        <div class="small-note">C.C. {{firma.vendedor_documento}}</div>
+      </div>
+
+      <div class="firma">
+        <div class="line"></div>
+        <div style="margin-top:6px;"><strong>{{firma.comprador_nombre}}</strong></div>
+        <div class="small-note">C.C. {{firma.comprador_documento}}</div>
+      </div>
     </div>
+
+    <p style="margin-top:18px;">Huella Índice _________________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bolsa de Seguridad No <u>{{firma.bolsa_seguridad_no}}</u></p>
+
   </div>
-
-  <br><br>
-
-  <p><strong>Número de Bolsa de Seguridad:</strong> {{firma.bolsa_seguridad_no}}</p>
-
 </body>
 </html>
