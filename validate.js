@@ -1,47 +1,57 @@
 import Joi from "joi";
+
 const contratoSchema = Joi.object({
-  numero: Joi.number().required(),
-  tipo: Joi.string().required(),
-  empresa: Joi.object({
-    nombre: Joi.string().required(),
-    nit: Joi.string().required(),
-    direccion: Joi.string().required(),
-    telefono: Joi.string().required(),
-    ciudad: Joi.string().required()
-  }).required(),
-  plazo: Joi.object({
-    meses: Joi.number().required(),
-    fecha_inicio: Joi.string().required(),
-    fecha_vencimiento: Joi.string().allow(null)
-  }).required(),
-  prestamo: Joi.object({
-    valor: Joi.number().required(),
-    valor_letras: Joi.string().required()
-  }).required(),
-  articulo: Joi.object({
-    descripcion: Joi.string().required(),
-    peso: Joi.string().required()
-  }).required(),
+  numero: Joi.string().required(),
+
   vendedor: Joi.object({
     nombre: Joi.string().required(),
-    cedula: Joi.string().required(),
-    ciudad: Joi.string().required(),
+    tipo_documento: Joi.string().required(),
+    numero_documento: Joi.string().required(),
+    lugar_expedicion: Joi.string().required(),
     direccion: Joi.string().required(),
-    celular: Joi.string().required()
+    telefono: Joi.string().required()
   }).required(),
+
   comprador: Joi.object({
     nombre: Joi.string().required(),
-    cedula: Joi.string().required()
+    tipo_documento: Joi.string().required(),
+    numero_documento: Joi.string().allow(""),
+    mostrar_cc: Joi.boolean().required()
   }).required(),
-  firmas: Joi.object({
-    vendedor: Joi.boolean().required(),
-    comprador: Joi.boolean().required()
+
+  articulo: Joi.object({
+    titulo_descripcion: Joi.string().required(),
+    descripcion_detallada: Joi.string().allow(""),
+
+    titulo_precio: Joi.string().required(),
+    precio_compraventa: Joi.string().allow(""),
+
+    precio_retroventa: Joi.string().allow("")
   }).required(),
-  observaciones: Joi.string().required(),
+
   clausulas: Joi.object({
+    titulo_clausulas: Joi.string().required(),
+
     primera: Joi.string().required(),
     segunda: Joi.string().required(),
-    tercera: Joi.string().required()
+    tercera: Joi.string().required(),
+    cuarta: Joi.string().required(),
+    quinta: Joi.string().required(),
+    sexta: Joi.string().required(),
+    septima: Joi.string().required(),
+    octava: Joi.string().required()
+  }).required(),
+
+  firma: Joi.object({
+    titulo_firmas: Joi.string().required(),
+
+    vendedor_nombre: Joi.string().required(),
+    vendedor_documento: Joi.string().required(),
+
+    comprador_nombre: Joi.string().required(),
+    comprador_documento: Joi.string().allow(""),
+
+    bolsa_seguridad_no: Joi.string().allow("")
   }).required()
 });
 
